@@ -3,7 +3,11 @@ Option Explicit
 
 Sub NumberFormatDecimal()
 Attribute NumberFormatDecimal.VB_ProcData.VB_Invoke_Func = "A\n14"
+<<<<<<< Updated upstream
 ' Shortcut: Ctrl+Shift+A
+=======
+' Recommended Shortcut: Ctrl+Shift+A
+>>>>>>> Stashed changes
 ' Cycles: #,##0 > #,##0.0 > #,##0.00 > #,##0.000 > (repeat)
 ' Applies right alignment and turns off wrap text.
     CycleNumberFormat Array( _
@@ -18,7 +22,11 @@ End Sub
 
 Sub NumberFormatPercentage()
 Attribute NumberFormatPercentage.VB_ProcData.VB_Invoke_Func = "P\n14"
+<<<<<<< Updated upstream
 ' Shortcut: Ctrl+Shift+P
+=======
+' Recommended Shortcut: Ctrl+Shift+P
+>>>>>>> Stashed changes
 ' Cycles: #,##0% > #,##0.0% > #,##0.00% > #,##0.000% > (repeat)
 ' Applies right alignment and turns off wrap text.
     CycleNumberFormat Array( _
@@ -30,7 +38,11 @@ End Sub
 
 Sub NumberFormatCurrency()
 Attribute NumberFormatCurrency.VB_ProcData.VB_Invoke_Func = "C\n14"
+<<<<<<< Updated upstream
 ' Shortcut: (assign as needed)
+=======
+' Recommended Shortcut: Ctrl+Shift+C
+>>>>>>> Stashed changes
 ' Cycles through simple, red-negative, and accounting variants at 0 and 2 decimal places.
 ' Applies right alignment and turns off wrap text.
     CycleNumberFormat Array( _
@@ -46,7 +58,11 @@ End Sub
 
 Sub NumberFormatDateTime()
 Attribute NumberFormatDateTime.VB_ProcData.VB_Invoke_Func = "T\n14"
+<<<<<<< Updated upstream
 ' Shortcut: Ctrl+Shift+T
+=======
+' Recommended Shortcut: Ctrl+Shift+T
+>>>>>>> Stashed changes
 ' Cycles through common date and time formats. Leaves alignment unchanged.
 ' Turns off wrap text.
     CycleNumberFormat Array( _
@@ -62,7 +78,7 @@ Attribute NumberFormatDateTime.VB_ProcData.VB_Invoke_Func = "T\n14"
         "yyyy-mm-dd hh:mm:ss"), _
         preserveAlignment:=True
         
-    Selection.EntireColumn.AutoFit
+    Selection.EntireColumn.Autofit
 End Sub
 
 Private Sub CycleNumberFormat(ByVal formats As Variant, Optional ByVal preserveAlignment As Boolean = False)
@@ -71,11 +87,11 @@ Private Sub CycleNumberFormat(ByVal formats As Variant, Optional ByVal preserveA
 ' when the end of the array is reached or no match is found.
 ' Unless preserveAlignment is True, right-aligns the selection and turns off wrap text.
 
-    Dim x As Variant
-    x = Application.Match(ActiveCell.NumberFormat, formats, False)
-    If IsError(x) Then x = 0
+    Dim X As Variant
+    X = Application.Match(ActiveCell.NumberFormat, formats, False)
+    If IsError(X) Then X = 0
 
-    Selection.NumberFormat = formats(x Mod (UBound(formats) + 1))
+    Selection.NumberFormat = formats(X Mod (UBound(formats) + 1))
 
     Selection.WrapText = False
 

@@ -3,7 +3,11 @@ Option Explicit
 
 Sub FindNextChange()
 Attribute FindNextChange.VB_ProcData.VB_Invoke_Func = "m\n14"
+<<<<<<< Updated upstream
 ' Shortcut: Ctrl+M
+=======
+' Recommended Shortcut: Ctrl+M
+>>>>>>> Stashed changes
 ' Navigates DOWN the active column to the next cell containing a value
 ' different from the active cell. Useful for stepping through any column
 ' where values change in blocks (e.g., True/False flags, category codes,
@@ -16,7 +20,11 @@ End Sub
 
 Sub FindPrevChange()
 Attribute FindPrevChange.VB_ProcData.VB_Invoke_Func = "M\n14"
+<<<<<<< Updated upstream
 ' Shortcut: Ctrl+Shift+M
+=======
+' Recommended Shortcut: Ctrl+Shift+M
+>>>>>>> Stashed changes
 ' Navigates UP the active column to the previous cell containing a value
 ' different from the active cell. See FindNextChange for full description.
 '
@@ -37,7 +45,7 @@ Private Sub NavigateChange(ByVal direction As Integer)
 
     Dim firstRow As Long, lastRow As Long
     firstRow = ActiveSheet.UsedRange.Row
-    lastRow = ActiveSheet.UsedRange.Row + ActiveSheet.UsedRange.Rows.Count - 1
+    lastRow = ActiveSheet.UsedRange.Row + ActiveSheet.UsedRange.Rows.count - 1
 
     Dim nextRow As Long
     nextRow = startCell.Row + direction
@@ -94,7 +102,11 @@ Private Sub FlashCell(ByVal c As Range)
 
     Dim startTime As Double
     startTime = Timer
+<<<<<<< Updated upstream
     Do While Timer >= startTime And Timer < startTime + 0.3
+=======
+    Do While (Timer - startTime) < 0.3 And (Timer - startTime) >= 0
+>>>>>>> Stashed changes
         DoEvents
     Loop
 
